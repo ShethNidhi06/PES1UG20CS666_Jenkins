@@ -3,27 +3,27 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'g++ -o nidhi nidhi_task5.cpp'
-                build job : 'PES1UG20CS666-1'
-                echo 'Build stage successful'
+                sh 'g++ -o nidhi_task5 nidhi_task5.cpp'
+                build job: 'PES1UG20CS666-1'
+                echo 'build stage successful'
             }
         }
         stage('Test') {
             steps {
-                sh './nidhi_666'
-                echo 'Test stage successful'
+                sh './nidhi_task5'
+                echo 'test stage successful'
             }
         }
         stage('Deploy') {
             steps {
                 sh 'echo "Deploying "'
-                echo 'Deployment successful'
+                echo 'deployment successful'
             }
         }
     }
     post {
         failure {
-          echo 'Pipeline failed'
+          echo 'pipeline failed'
                 }
             
         
